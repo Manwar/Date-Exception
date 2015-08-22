@@ -1,11 +1,11 @@
-package Date::Exception;
+package Date::Exception::InvalidDay;
 
-$Date::Exception::VERSION   = '0.01';
-$Date::Exception::AUTHORITY = 'cpan:MANWAR';
+$Date::Exception::InvalidDay::VERSION   = '0.01';
+$Date::Exception::InvalidDay::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
 
-Date::Exception - Base exception package as Moo Role for Date::* packages.
+Date::Exception::InvalidDay - Handles 'invalid day' exception.
 
 =head1 VERSION
 
@@ -16,29 +16,16 @@ Version 0.01
 use 5.006;
 use Data::Dumper;
 
-use Moo::Role;
+use Moo;
 use namespace::clean;
-requires qw(status);
-with 'Throwable';
 
-use overload q{""} => 'as_string', fallback => 1;
+has status => (is => 'ro', default => sub { 101 });
 
-has method      => (is => 'ro');
-has message     => (is => 'ro');
-has filename    => (is => 'ro');
-has line_number => (is => 'ro');
-
-sub as_string {
-    my ($self) = @_;
-
-    return sprintf("%s(): %s (status: %s) file %s on line %d\n",
-                   $self->method, $self->message, $self->status,
-                   $self->filename, $self->line_number);
-}
+with 'Date::Exception';
 
 =head1 DESCRIPTION
 
-Base exception package as Moo Role for Date::* packages.
+Handles 'invalid day' exception, with statu code C<101>.
 
 =head1 AUTHOR
 
@@ -59,7 +46,7 @@ bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Date::Exception
+    perldoc Date::Exception::InvalidDay
 
 You can also look for information at:
 
@@ -123,4 +110,4 @@ OF THE PACKAGE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =cut
 
-1; # End of Date::Exception
+1; # End of Date::Exception::InvalidDay

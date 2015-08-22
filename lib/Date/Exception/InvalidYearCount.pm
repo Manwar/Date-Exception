@@ -1,11 +1,11 @@
-package Date::Exception::Type;
+package Date::Exception::InvalidYearCount;
 
-$Date::Exception::Type::VERSION   = '0.01';
-$Date::Exception::Type::AUTHORITY = 'cpan:MANWAR';
+$Date::Exception::InvalidYearCount::VERSION   = '0.01';
+$Date::Exception::InvalidYearCount::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
 
-Date::Exception::Type - Exception types for Date::Exception package.
+Date::Exception::InvalidYearCount - Handles 'invalid year count' exception.
 
 =head1 VERSION
 
@@ -14,53 +14,18 @@ Version 0.01
 =cut
 
 use 5.006;
-use strict; use warnings;
+use Data::Dumper;
 
-use vars qw(@ISA @EXPORT_OK %EXPORT_TAGS);
-require Exporter;
-@ISA = qw(Exporter);
+use Moo;
+use namespace::clean;
 
-my %types_of = (
-    101 => 'Invalid Day',
-    102 => 'Invalid Month',
-    103 => 'Invalid Year',
-    104 => 'Invalid Day Count',
-    105 => 'Invalid Month Count',
-    106 => 'Invalid Year Count',
-);
+has status => (is => 'ro', default => sub { 106 });
 
-my $mnemonic_code = '';
-while (my ($code, $message) = each %types_of) {
-    $message =~ tr/a-z \-/A-Z__/;
-    $mnemonic_code .= "sub ERROR_$message () { $code }\n";
-    $mnemonic_code .= "push(\@EXPORT_OK, 'ERROR_$message');\n";
-}
-
-eval $mnemonic_code; die if $@;
-
-%EXPORT_TAGS = (constants => [grep /^ERROR_/, @EXPORT_OK]);
+with 'Date::Exception';
 
 =head1 DESCRIPTION
 
-B<FOR INTERNAL USE ONLY>.
-
-=head1 EXCEPTION TYPES
-
-=over 2
-
-=item * 101: Invalid Day
-
-=item * 102: Invalid Month
-
-=item * 103: Invalid Year
-
-=item * 104: Invalid Day Count
-
-=item * 105: Invalid Month Count
-
-=item * 106: Invalid Year Count
-
-=back
+Handles 'invalid year count' exception, with statu code C<106>.
 
 =head1 AUTHOR
 
@@ -81,7 +46,7 @@ bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Date::Exception::Type
+    perldoc Date::Exception::InvalidYearCount
 
 You can also look for information at:
 
@@ -145,4 +110,4 @@ OF THE PACKAGE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =cut
 
-1; # End of Date::Exception::Type
+1; # End of Date::Exception::InvalidYearCount
