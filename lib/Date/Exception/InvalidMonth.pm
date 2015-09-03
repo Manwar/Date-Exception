@@ -1,6 +1,6 @@
 package Date::Exception::InvalidMonth;
 
-$Date::Exception::InvalidMonth::VERSION   = '0.01';
+$Date::Exception::InvalidMonth::VERSION   = '0.02';
 $Date::Exception::InvalidMonth::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ Date::Exception::InvalidMonth - Handles 'invalid month' exception.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
