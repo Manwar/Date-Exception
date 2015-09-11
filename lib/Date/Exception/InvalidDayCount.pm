@@ -1,6 +1,6 @@
 package Date::Exception::InvalidDayCount;
 
-$Date::Exception::InvalidDayCount::VERSION   = '0.02';
+$Date::Exception::InvalidDayCount::VERSION   = '0.03';
 $Date::Exception::InvalidDayCount::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ Date::Exception::InvalidDayCount - Handles 'invalid day count' exception.
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 

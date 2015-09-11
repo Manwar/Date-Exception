@@ -1,8 +1,11 @@
 Revision history for Date-Exception
 
+0.03  2015-09-11T10:30:00+01:00
+      - Updated README file to reflect the right information.
+
 0.02  2015-09-03T16:05:00+01:00
       - Updated Changes file according to CPAN::Changes::Spec package.
       - Added unit test changes.t file.
 
-0.01  2015-08-22T21:15:00+01:00
+0.01  Sat Aug 22 21:15:00 2015
       - First version, released.
