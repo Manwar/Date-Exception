@@ -1,4 +1,8 @@
-Revision history for Date-Exception
+Revision history for Date::Exception
+
+0.04  2016-08-25T10:30:00+01:00
+      - Updated copyright year information.
+      - Tidied up Makefile.PL script.
 
 0.03  2015-09-11T10:30:00+01:00
       - Updated README file to reflect the right information.
