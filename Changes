@@ -1,5 +1,8 @@
 Revision history for Date::Exception
 
+0.06  2018-11-03T11:30:00+01:00
+      - Added key 'provides' as suggested by CPANTS.
+
 0.05  2018-11-01T16:50:00+01:00
       - Used namespace::autoclean now.
 
